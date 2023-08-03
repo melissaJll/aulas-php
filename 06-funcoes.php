@@ -74,5 +74,23 @@
     ?>
     <p> <?=saudacao("Bom dia", "melissa")?></p>
     <p> <?=saudacao("Bom dia")?></p>
+
+
+    <hr>
+
+    <h2>Introdução a tipos de dados</h2>
+    <!-- indução de tipos deve ser feita nos parâmetors e no retorno da função
+    Isso influenciara na entrade e saída correta dos dados manipulados pela função, além de melhorar as mensagens de erros-->
+    <?php
+    function verififcaNegativo(int $valor):string{
+        if($valor< 0){
+            return "Negativo";
+        } else{
+            return "Não é negativo";
+        }  
+    }
+    ?>
+    <p> Número 10: <?=verififcaNegativo(10)?></p>
+    <p> Número -10: <?=verififcaNegativo(-10)?></p>
 </body>
 </html>
