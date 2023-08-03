@@ -83,11 +83,11 @@
     Isso influenciara na entrade e saída correta dos dados manipulados pela função, além de melhorar as mensagens de erros-->
     <?php
     function verififcaNegativo(int $valor):string{
+        /*Early return (nesse caso o else{} foi omitido)*/ 
         if($valor< 0){
             return "Negativo";
-        } else{
-            return "Não é negativo";
-        }  
+        }
+        return "Não é negativo";         
     }
     ?>
     <p> Número 10: <?=verififcaNegativo(10)?></p>
