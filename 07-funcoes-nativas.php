@@ -82,9 +82,15 @@ extract($aluno); //transforma a chave em variavel na array associativa aluno["id
 ?>  
     <ul>
         <li>ID: <?=$id?></li>
-        <li>Nome: <?=$Nome?></li>
-        <li>Idade: <?=$Idade?></li>
+        <li>Nome: <?=$nome?></li>
+        <li>Idade: <?=$idade?></li>
     </ul>
+
+    <h3>array_sum()</h3>
+<?php
+$total = array_sum($valores);
+?>
+    <p>Soma dos valores: <?=$total?></p>
 
 
     <hr>
