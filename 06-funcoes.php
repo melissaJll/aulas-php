@@ -40,6 +40,7 @@
 
 
 
+
     <hr>
     <h2>Função com parametros ou argumentos</h2>
 
@@ -76,6 +77,8 @@
     <p> <?=saudacao("Bom dia")?></p>
 
 
+
+    
     <hr>
 
     <h2>Introdução a tipos de dados</h2>
@@ -94,6 +97,7 @@
     <p> Número -10: <?=verififcaNegativo(-10)?></p>
 
 
+
     <!-- Função anônima -->
     <h2>Função anônima (ou clousure, lambda)</h2>
     <?php
@@ -101,7 +105,7 @@
     $formataPreco = function(float $valor){
         $precoFormatado = "R$ ".number_format($valor,2,",",".");
         return $precoFormatado;
-    }; //obrigatório usa ; aqui
+    }; //obrigatório usa ; AQUI
      ?>
     <p> 1000 formatado fica: <?=$formataPreco(1000)?> </p>
 </body>
