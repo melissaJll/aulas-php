@@ -11,8 +11,8 @@
 </head>
 <body>
     <?php
-    $nota1 = 9;
-    $nota2 = 10;
+    
+    
     function media(float $valor1, float $valor2):float {
         $media = ($valor1 + $valor2)/2;
         return $media;
