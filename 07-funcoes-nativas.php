@@ -69,6 +69,24 @@ $textoBandas = implode( ", ", $bandas);
     <pre><?=var_dump($bandas)?></pre>
     <pre><?=var_dump($textoBandas)?></pre>
 
+    <h3>extract()</h3>
+    <!-- funcão que extrai chaves associativas para variáveis  -->
+<?php
+$aluno = [
+    "id" => 1,
+    "nome" => "charlie",
+    "idade" => 25
+];
+
+extract($aluno); //transforma a chave em variavel na array associativa aluno["id"]
+?>  
+    <ul>
+        <li>ID: <?=$id?></li>
+        <li>Nome: <?=$Nome?></li>
+        <li>Idade: <?=$Idade?></li>
+    </ul>
+
+
     <hr>
     <h2>Filtros</h2>
 
