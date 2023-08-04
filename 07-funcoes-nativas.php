@@ -92,6 +92,18 @@ $total = array_sum($valores);
 ?>
     <p>Soma dos valores: <?=$total?></p>
 
+    <h3>array_unique()</h3>
+    <!-- Retorna um novo array com dados únicos -->
+
+<?php
+    $produtos = [
+        "notebook", "tv", "notebook", "fone", "tv", "mouse"
+    ];
+    $produtosUnicos = array_unique($produtos)
+?>
+    <pre><?=var_dump($produtos)?></pre>
+    <pre><?=var_dump($produtosUnicos)?></pre>
+
 
     <hr>
     <h2>Filtros</h2>
