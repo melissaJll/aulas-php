@@ -105,19 +105,29 @@ $total = array_sum($valores);
     <pre><?=var_dump($produtosUnicos)?></pre>
 
 
+
     <hr>
     <h2>Filtros</h2>
     <p>Recursos(Constantes) de análise e limpeza de dados aplicados através das funções <code>filter_var()</code> e <code>filter_input()</code></p>
     
     <h3>Validação</h3>
-    <?php
-    $email = "tiago.com.br" //"tiago@email.com.br"
-    ?>
+<?php
+$email = "tiago.com.br" //"tiago@email.com.br"
+?>
     <pre>
         <?=var_dump(filter_var($email, FILTER_VALIDATE_EMAIL))?> 
         <!-- filter car é generica o que especifica é (email, AQUI é uma constante) -->
     </pre>
-    <h3>Sanitização</h3>
+    <h3>Sanitização</h3> 
+<?php
+$ataque = "<script>document.body.innerHTML = '<h1> Ataque </h1>'</script>";
+$ataqueSanitizado = filter_var($ataque, FILTER_SANITIZE_SPECIAL_CHARS);
+//execução com sanitização (script é anulado) vira um texto normal
+echo $ataqueSanitizado;
+
+//execução sem sanitização
+// echo $ataque;
+?>
 
 
     <hr>
