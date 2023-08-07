@@ -107,6 +107,17 @@ $total = array_sum($valores);
 
     <hr>
     <h2>Filtros</h2>
+    <p>Recursos(Constantes) de análise e limpeza de dados aplicados através das funções <code>filter_var()</code> e <code>filter_input()</code></p>
+    
+    <h3>Validação</h3>
+    <?php
+    $email = "tiago.com.br" //"tiago@email.com.br"
+    ?>
+    <pre>
+        <?=var_dump(filter_var($email, FILTER_VALIDATE_EMAIL))?> 
+        <!-- filter car é generica o que especifica é (email, AQUI é uma constante) -->
+    </pre>
+    <h3>Sanitização</h3>
 
 
     <hr>
