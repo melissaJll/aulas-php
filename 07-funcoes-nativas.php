@@ -131,6 +131,37 @@ echo $ataqueSanitizado;
 
 
     <hr>
-    <h2>Segurança</h2>
+    <h2>Segurança (criptografia de dados)</h2>
+<?php
+$senha = "senac123";
+// Algoritmos mais comuns para criptografia: MD5, SHA1, SHA256
+// Estes algoritmos pegam os dados e os codificam/criptografeam, tornando um "hash" de dados embaralhados.
+$senhaMD = md5($senha);
+$senhaSHA1 = sha1($senha);
+$senhaSHA256 = sha1($senha);
+?>
+
+<p>senha (texto puro): <?=$senha?></p>
+<p>senha (MD5): <?=$senhaMD?></p>
+<p>senha SHA1: <?=$senhaSHA1?></p>
+<p>senha SHA256: <?=$senhaSHA256?></p>
+
+<?php
+// metodo recomendado para segurança de senhas no PHP - gera dinamico
+$senhaSegura = password_hash($senha, PASSWORD_DEFAULT);
+?>
+<p>Senha (com PASSWORD_DEFAULT) <?=$senhaSegura?></p>
+<?php
+// Como verificar o hash da senha se ele muda?
+$senhaDigitada = "senac123"; //simulando input de usuario
+
+if (password_verify($senhaDigitada, $senhaSegura)) {
+    echo "Senha correta!";
+}else{
+    echo "senha incorreta!";
+}
+
+?>
+
 </body>
 </html>
