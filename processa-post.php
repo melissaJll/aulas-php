@@ -32,7 +32,7 @@
     <ul>
         <li>Nome: <?=$nome?></li>
         <li>Email: <?=$email?> </li>
-        <li>Interesses: <?=$interesses?> </li><!-- É uma array então não pode ser chamado como uma variavel normal -->
+        <li>Interesses: <?=implode(", " , $interesses)?> </li><!-- É uma array então não pode ser chamado como uma variavel normal -->
         <li>Idade: <?=$idade?> </li>
 
         <!-- Não é obrigatório, se a $mensagem não estiver VAZIA mostre li preechido  -->
