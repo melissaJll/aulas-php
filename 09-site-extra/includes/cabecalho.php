@@ -1,9 +1,19 @@
+<?php
+    $page = basename($_SERVER['PHP_SELF']);
+    switch($page){
+        case "index.php" : $titulo = "Página inicial"; break;
+        case "cursos.php" : $titulo = "Cursos"; break;
+        case "duvidas.php" : $titulo = "Dúvidas"; break;
+        default : $titulo = "Contato"; break;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=basename($_SERVER['PHP_SELF'],'.php');?> - Site PHP</title>
+    <title><?=$titulo?> - Site PHP</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
