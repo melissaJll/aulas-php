@@ -13,9 +13,17 @@
     <!-- Não aparece na URL -->
 
 <?php
-$nome = $_POST["nome"];
-$email = $_POST["email"];
-$mensagem = $_POST["mensagem"];
+// verificar se os campos nome  eemail estão vazios
+//Pegar do array post o "nome" e não a variavel $ que ainda não esxite nesse ponto 
+    if (empty($_POST["nome"]) || empty($_POST["email"])) {
+?>
+        <p>Você deve preecher o nome e e-mail</p>
+        <p><a href="10-formulario.html">Voltar</a></p>
+<?php
+    }else {
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $mensagem = $_POST["mensagem"];
 ?>
 
     <h2>Dados: </h2>
@@ -24,6 +32,7 @@ $mensagem = $_POST["mensagem"];
         <li>Email: <?=$email?> </li>
         <li>Mensagem: <?=$mensagem?></li>
     </ul>
+<?php }?>
     
 </body>
 </html>
