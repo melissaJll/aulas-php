@@ -36,7 +36,7 @@
         <li>Idade: <?=$idade?> </li>
 
         <!-- Não é obrigatório, se a $mensagem não estiver VAZIA mostre li preechido  -->
-        <?php if(! empty($mensagem)){ ?>
+        <?php if(!empty($mensagem)){ ?>
             <li>Mensagem: <?=$mensagem?></li>
         <?php } ?>
     </ul>
