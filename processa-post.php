@@ -21,6 +21,7 @@
         <p><a href="10-formulario.html">Voltar</a></p>
 <?php
     }else {
+        //Filtros para sanitização
         $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
         // $nome = filter_var($_POST["nome"], FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
