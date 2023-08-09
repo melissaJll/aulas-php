@@ -24,8 +24,16 @@
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $mensagem = $_POST["mensagem"];
-        $interesses =$_POST["interesses"];
         $idade = $_POST["idade"];
+        //se existe
+        if (isset($_POST["interesses"])) {
+            $interesses =$_POST["interesses"];
+        }else{
+            $interesses = array(); // = [];
+        }
+
+        // operrador de coalescência: ??
+        // $interesses = $_POST["interesses"] ?? [];
 ?>
 
     <h2>Dados: </h2>
