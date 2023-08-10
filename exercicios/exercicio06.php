@@ -1,3 +1,4 @@
+<?php require "processa-06.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio - 06</title>
     <style>
-        body {background: rgb(176,232,114);
-        background: linear-gradient(304deg, rgba(176,232,114,1) 0%, rgba(114,209,232,1) 50%); height: 99vh}
+        /* body {background: rgb(176,232,114); */
+        /* background: linear-gradient(304deg, rgba(176,232,114,1) 0%, rgba(114,209,232,1) 50%); height: 99vh} */
         form{
         margin: 20px auto 0 auto;
         border: 1px rgb(155, 155, 155);
@@ -30,23 +31,25 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 </head>
 <body>
-<?php  $fabricantes = ["","Dell","EPCOM","Lenovo","HP"]; 
-?>
+
 
     <div class="container">
-        <form action="../exercicio/processa06.php" method="post">
-            <!-- ALTERAR -->
+        <form action="../exercicios/processa-06.php" method="post">
             <p>
                 <label for="nome">Nome do produto:</label>
                 <input class="width-80" type="text" name="nome" id="nome" required>
             </p>
-            <label for="fabricantes">Escolha o fabricante: </label>
-            <select id="fabricantes" name="fabricantes">
-                <?php
-                foreach ($fabricantes as $fabricante){ ?>
-                    <option value=""><?=$fabricante?></option>
-                <?php }?>
-            </select>
+
+            <p>
+                <label for="fabricantes">Escolha o fabricante: </label>
+                <select id="fabricante" name="fabricante">
+                    <?php
+                    foreach ($fabricantes as $fabricante){ ?>
+                        <option value="<?=$fabricante;?>"><?=$fabricante?></option>
+                    <?php }?>
+                </select>
+            </p>
+
             <p>
                 <label for="preco">Preço</label><br>
                 <input type="number" name="preco" step=".01" id="preco" min="100" max="10000" required>
@@ -60,7 +63,7 @@
             </div>
             <p>
                 <label for="descricao">Descrição:</label><br>
-                <textarea name="descricao" id="descricao" cols="50"  rows="6"></textarea>
+                <textarea name="descricao" id="descricao" cols="35"  rows="6"></textarea>
             </p>
             <button type="submit" name="enviar" id="enviar"> Enviar </button>
         </form>
