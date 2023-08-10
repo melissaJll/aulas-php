@@ -42,7 +42,7 @@ else{
         <div class="card text-bg-light mb-3 padding20 .mrg-top18" style="max-width: 19rem;">
             <p><b>Nome do Produto:</b> <?=$nome?></p>
             <p><b>Fabricante:</b> <?=$fabricante?></p>
-            <p><b>Preço:</b> R$<?=number_format($preco, 2, ",", ".")?></p>
+            <p><b>Preço:</b><?=number_format($preco, 2, ',', ' ')?></p>
             <p><b>Disponibilidade:</b> <?=$disponibilidade?></p>
             <p><b>Descrição do produto:</b> <?=$descricao?></p>
         </div>
