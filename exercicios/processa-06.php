@@ -28,8 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
 <?php    
-    } 
-else{
+    } else{
         // Atribuição à variável de acordo com o name=""
         $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
         $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
@@ -42,11 +41,12 @@ else{
         <div class="card text-bg-light mb-3 padding20 .mrg-top18" style="max-width: 19rem;">
             <p><b>Nome do Produto:</b> <?=$nome?></p>
             <p><b>Fabricante:</b> <?=$fabricante?></p>
-            <p><b>Preço:</b><?=number_format($preco, 2, ',', ' ')?></p>
+            <p><b>Preço:</b> R$<?=number_format($preco, 2, ',', ' ')?></p>
             <p><b>Disponibilidade:</b> <?=$disponibilidade?></p>
             <p><b>Descrição do produto:</b> <?=$descricao?></p>
         </div>
-<?php } } ?>
+<?php } 
+    } ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>

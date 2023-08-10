@@ -7,7 +7,7 @@
     <title>Exercicio - 06</title>
     <style>
          body {background: rgb(160,219,236);
-    background: linear-gradient(110deg, rgba(160,219,236,1) 30%, rgba(181,238,255,1) 99%); height: 100vh} 
+        background: linear-gradient(110deg, rgba(160,219,236,1) 30%, rgba(181,238,255,1) 99%); height: 100vh} 
         form{
         margin: 20px auto 0 auto;
         border: 1px rgb(155, 155, 155);
@@ -17,7 +17,6 @@
         padding: 20px;
         background-color: rgba(253, 253, 253, 0.829);
         }
-        .center{margin: auto;}
         .width-80{width: 70%;}
         .mrg-top18{ margin-top: 18px;}
 
