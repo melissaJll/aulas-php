@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processamento</title>
     <style>
+        /* Mesmos comentários sobre CSS que fiz na página anterior */
         html .processo{background-color: #e3f8ff;}
         .padding20{ padding: 20px;}
         .mrg-top18{margin: 8px;}
@@ -14,11 +15,14 @@
 </head>
 <body>
 <?php
+/* Sobre este array, é o que comentei antes.
+Inclusive, nesta página de processamento, ele nem tem serventia. */
 $fabricantes = ["Dell","EPCOM","Lenovo","HP"];
 ?>
 
 <?php
-
+/* Forma interessante (e também correta) de detectar o envio de formulários.
+Mas, como você já tinha definido o action do formulário, esta detecção abaixo nem é necessária. */
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if( empty($_POST["nome"]) || empty($_POST["preco"])){
 ?>
@@ -31,7 +35,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else{
         // Atribuição à variável de acordo com o name=""
         $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+
+
+        /* Quanto ao preço, na verdade você deveria usar dois filtros:
+        um para sanitizar números do tipo float e outro para aceitar casas decimais/dígitos.
+        Experimente digitar um preço de 1500,78 e veja como ele aparece... */
         $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
+        
         $fabricante = filter_input(INPUT_POST, "fabricante", FILTER_SANITIZE_SPECIAL_CHARS);
         $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
         $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
