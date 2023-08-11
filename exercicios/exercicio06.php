@@ -1,3 +1,10 @@
+<!-- Neste caso, não faz muito sentido fazer include do processa-06.php inteiro.
+Pelo que entendi, você só fez isso porque queria pegar os dados do array $fabricantes.
+Se foi isso, o ideal era criar o array aqui mesmo na página exercicio06.
+
+Ao fazer o include do processa-06, você está incluindo o array e todo o restante da página.
+Veja o código-fonte HTML no navegador: vai aparecer uma página dentro da outra, com dois <!DOCTYPE> e tudo mais.
+Não gerou problemas no seu exercício, mas numa aplicação real isso com certeza iria gerar muitos bugs. -->
 <?php require "processa-06.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -6,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio - 06</title>
     <style>
+        /* CSS ficou bem bacana, mas o ideal é que o seu CSS venha DEPOIS do CSS do Bootstrap.
+        Desta forma, o seu CSS sempre terá prioridade. */
          body {background: rgb(160,219,236);
         background: linear-gradient(110deg, rgba(160,219,236,1) 30%, rgba(181,238,255,1) 99%); height: 100vh} 
         form{
@@ -27,8 +36,11 @@
 
 <body>
 
+    <!-- Podia ter pelo menos um <h1> aqui -->
 
     <div class="container">
+        <!-- O caminho poderia ser apenas "processa-06.php", afinal, os dois arquivos
+        estão juntos na mesma pasta (exercicios) -->
         <form action="../exercicios/processa-06.php" method="post">
             <div class="mb-3">
                 <!-- Nome Produto -->
@@ -41,6 +53,8 @@
             <div class="mb-3">
                 <label class="form-label" for="fabricantes">Escolha o fabricante: </label>
                 <select class="form-select" id="fabricante" name="fabricante">
+                    <!-- PHP está correto, mas antes dele, é bom deixa um
+                    <option> vazio (fora do PHP, usando HTML puro mesmo). -->
                     <?php
                     foreach ($fabricantes as $fabricante){ ?>
                         <option value="<?=$fabricante;?>"><?=$fabricante?></option>
