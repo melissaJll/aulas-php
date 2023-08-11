@@ -31,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else{
         // Atribuição à variável de acordo com o name=""
         $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
-        $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
+        // $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
+        $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_FLOAT);
         $fabricante = filter_input(INPUT_POST, "fabricante", FILTER_SANITIZE_SPECIAL_CHARS);
         $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
         $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
