@@ -1,4 +1,4 @@
-<?php require "processa-06.php"?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,7 +27,9 @@
 
 <body>
 
-
+<?php
+$fabricantes = ["Dell","EPCOM","Lenovo","HP"];
+?>
     <div class="container">
         <form action="../exercicios/processa-06.php" method="post">
             <div class="mb-3">
@@ -41,6 +43,7 @@
             <div class="mb-3">
                 <label class="form-label" for="fabricantes">Escolha o fabricante: </label>
                 <select class="form-select" id="fabricante" name="fabricante">
+                    <option value=""></option>
                     <?php
                     foreach ($fabricantes as $fabricante){ ?>
                         <option value="<?=$fabricante;?>"><?=$fabricante?></option>
