@@ -105,7 +105,7 @@
     $formataPreco = function(float $valor){
         $precoFormatado = "R$ ".number_format($valor,2,",",".");
         return $precoFormatado;
-    }; //obrigatório usa ; AQUI
+    }; //obrigatório usar ; AQUI
      ?>
     <p> 1000 formatado fica: <?=$formataPreco(1000)?> </p>
 </body>
